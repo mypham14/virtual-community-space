@@ -1,36 +1,27 @@
 import express from 'express'
-import path from 'path'
-import favicon from 'serve-favicon'
-import dotenv from 'dotenv'
+import './config/dotenv.js'
+import eventsRouter from './routes/events.js'
+import locationsRouter from './routes/locations.js'
+import cors from 'cors'
 
-// import the router from your routes file
-
-
-dotenv.config()
-
-const PORT = process.env.PORT || 3000
-
+// Initialize the Express application
 const app = express()
 
-app.use(express.json())
+app.use(cors())
 
-if (process.env.NODE_ENV === 'development') {
-    app.use(favicon(path.resolve('../', 'client', 'public', 'party.png')))
-}
-else if (process.env.NODE_ENV === 'production') {
-    app.use(favicon(path.resolve('public', 'party.png')))
-    app.use(express.static('public'))
-}
+// Add the events and locations endpoints to the app 
+app.use('/api/events', eventsRouter)
+app.use('/api/locations', locationsRouter)
 
-// specify the api path for the server to use
+// Define a route for the root URL
+app.get('/', (req, res) => {
+    res.status(200).send('<h1 style="text-align: center; margin-top: 50px;">TechTrail API</h1>')
+})
 
-
-if (process.env.NODE_ENV === 'production') {
-    app.get('/*', (_, res) =>
-        res.sendFile(path.resolve('public', 'index.html'))
-    )
-}
+// Start the server and listen on port 3002
+const PORT = process.env.PORT || 3002
 
 app.listen(PORT, () => {
-    console.log(`server listening on http://localhost:${PORT}`)
+  console.log(`🚀 Server listening on http://localhost:${PORT}`)
 })
+

@@ -9,12 +9,15 @@
   "dependencies": {
     "@picocss/pico": "^1.5.7",
     "concurrently": "^7.6.0",
+    "cors": "^2.8.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "leaflet": "^1.9.4",
     "nodemon": "^2.0.22",
     "pg": "^8.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.9.0",
     "serve-favicon": "^2.5.0"
   },

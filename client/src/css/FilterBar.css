@@ -1,0 +1,46 @@
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(3, 1, 64, 0.85);
+    border: 2px solid white;
+}
+
+.filter-bar input,
+.filter-bar select,
+.filter-bar button {
+    width: auto;
+    margin: 0;
+}
+
+.filter-bar input[type=search] {
+    flex: 1 1 260px;
+}
+
+.filter-bar select {
+    flex: 0 1 220px;
+}
+
+.filter-bar label {
+    color: white;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-bar input[type=checkbox] {
+    margin: 0;
+}
+
+.results-count {
+    color: white;
+    text-align: center;
+    margin: 16px 0 0;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px black;
+}

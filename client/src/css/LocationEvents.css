@@ -37,3 +37,7 @@
 .location-events main i {
     margin-right: 10px;
 }
+.location-filters {
+    padding: 0 30px;
+    margin-top: 20px;
+}
